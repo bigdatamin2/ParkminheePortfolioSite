@@ -1,0 +1,96 @@
+<!-- users/templates/certificate_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate List</title>
+    <style>
+        body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f4f4;
+        text-align: center;
+        margin: 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh; /* 뷰포트 높이를 활용하여 화면 전체를 커버하도록 설정 */
+        }
+
+        /* 기존의 스타일은 그대로 유지합니다. */
+        h1 {
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+            text-align: left; /* 왼쪽 정렬 추가 */
+        }
+
+        a.board-link {
+            display: inline-block;
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+            transition: background-color 0.3s ease-in-out;
+            text-align: left;
+        }
+
+        a.board-link:hover {
+            background-color: #f0f0f0;
+        }
+
+        a.button {
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            background-color: #428bca;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        a.button:hover {
+            background-color: #3071a9;
+        }
+
+        p {
+            color: #555;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Certificate List</h1>
+    {% if certificates %}
+    <!-- certificate_list.html -->
+    <ul>
+        {% for certificate in certificates %}
+            <li>
+                <span>{{ forloop.counter }}. </span>
+                <a href="{% url 'detail' certificate_id=certificate.id %}" class="board-link">
+                    {{ certificate.name }} - {{ certificate.organization }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+
+
+    {% else %}
+        <p>게시글이 없습니다.</p>
+    {% endif %}
+    <h4>
+        <a href="{% url 'home' %}" class="button">Home</a>
+    </h4>
+</body>
+
+</html>

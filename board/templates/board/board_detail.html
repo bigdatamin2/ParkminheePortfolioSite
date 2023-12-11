@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Board Detail</title>
+    <style>
+        body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f4f4;
+        text-align: center;
+        margin: 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh; /* 뷰포트 높이를 활용하여 화면 전체를 커버하도록 설정 */
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        div {
+            margin-bottom: 20px;
+        }
+
+        button.button {
+            padding: 10px 20px;
+            background-color: #428bca;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button.button:hover {
+            background-color: #3071a9;
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ board.subject }}</h1>
+    <div>
+        {{ board.content }}
+    </div>
+    <button type="button" onclick="location.href='{% url 'board:board_update' pk=board.id %}'" class="button">수정</button>
+</body>
+</html>

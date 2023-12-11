@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Confirmation</title>
+    <style>
+        body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f4f4;
+        text-align: center;
+        margin: 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh; /* 뷰포트 높이를 활용하여 화면 전체를 커버하도록 설정 */
+        }
+        h1 {
+            color: #333;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #428bca;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #3071a9;
+        }
+
+        a.button {
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            background-color: #428bca;
+            color: #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        a.button:hover {
+            background-color: #3071a9;
+        }
+
+        a.button-cancel {
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            background-color: #ccc;
+            color: #333;
+            border-radius: 5px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        a.button-cancel:hover {
+            background-color: #999;
+        }
+    </style>
+</head>
+<body>
+    <h1>Delete Confirmation</h1>
+    <p>Are you sure you want to delete "{{ board.subject }}"?</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" value="Yes, delete">
+    </form>
+
+    <a href="{% url 'board:list' %}" class="button-cancel">Cancel</a>
+</body>
+</html>

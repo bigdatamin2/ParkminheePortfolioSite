@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Minhee Park</title>
+    <link rel="stylesheet" href="{% static 'css/Main_Animat.css' %}">
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script>
+        $(window).on("load", function() {
+        $("header, main").addClass("active");
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>BIG DATA</h1>
+            <nav class="gnb-menu">
+                <a href="{% url 'AboutMe' %}">About Me</a>
+                <a href="{% url 'ResearchProject' %}">Research Project</a>
+                <a href="{% url 'Certificate' %}">Certificate</a>
+                <a href="{% url 'SchoolLife' %}">School life</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <p>Data Scientist,</p>
+            <p>Portfolio of</p>
+            <p>Minhee Park</p>
+        </div>
+    </main>
+
+
+</body>
+</html>

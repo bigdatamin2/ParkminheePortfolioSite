@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+{% load static %}
+<head>
+    <title>About Me</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/my.css' %}">
+    <style>
+        body {
+            margin: 0; /* Remove default body margin */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh; /* Ensure full height of the viewport */
+        }
+        header a {
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            background-color: #FFD9EB;
+            color: #000;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        header a:hover {
+            background-color: #0056b3;
+        }
+
+        .pov {
+            width: 50%; /* Adjust width as needed */
+            padding: 20px; /* Add some padding for better readability */
+            background-color: #f8f8f8; /* Add background color if needed */
+        }
+    </style>
+</head>
+<body>
+<header>
+    <a href="{% url 'home' %}"><p>Home</p></a>
+</header>
+
+<div class="pov">
+    <h1>인생관 및 가치관</h1>
+    <p>
+    저는 '모든 분야에서 제 자신 안에서의 개선 가능성'을 보는 것을 좋아합니다.
+        어떠한 문제가 주어지면 그 문제에 관해 구체적인 세부 사항을 먼저 보기보다는 큰 그림, 추상적인 정보에 집중합니다.
+        주어진 프로젝트나 아이디어에 깊이 몰입하고 목표를 달성하기 위해 집중적으로 노력하는 것을 즐겨합니다.
+        지식에 대한 갈망이 있어, 지속적으로 능력을 향상시키기 위해 정보를 학습자의 입장으로 받아들여 자신의 지식을 쌓기 위해 노력하며 살아가고 있습니다.
+    </p>
+    <p>
+    또한 저는 과한 겸손도 자만도 아닌 '올바른 겸손'이 필요하다고 생각합니다.
+        자신감을 가지되 교만하지 않는 사람이 되어 자신을 부풀려 과대 포장하지 않고 묵묵히 자신의 위치에서 최선을 다하는 것입니다.
+        그렇게 어느샌가 성장해 있는 나 자신을 발견하며 살아가는 것이 인생에 있어서 가져야할 가치관이라고 생각합니다.
+    </p>
+</div>
+</body>
+</html>
